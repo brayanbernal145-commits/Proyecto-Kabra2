@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D'juan Carlos Peluqueria</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}" href="/css/estilo.css">
+</head>
+
+<body>
+<header>
+    <div class="left">
+        <div class="menu_container">
+            <div class="menu" id="menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="brad">
+            <a href="index2.html">
+                <img th:src="@{/bostraap/icons/logo2.jpeg}" src="bostraap/icons/logo2.jpeg" alt="icon-udemy" class="logo">
+            </a>
+            <span class="name">D'Juan Carlos Peluqueria</span>
+        </div>
+    </div>
+    <div class="right">
+        <a
+                href="https://api.whatsapp.com/send?phone=573212276888&text=Hola%2C%20D%20Juan%20Carlos%20Peluquer%C3%ADa.%20Estaba%20viendo%20sus%20redes%20sociales%20y%20me%20interesar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%3A">
+            <img src="bostraap/icons/whas.svg" alt="chat">
+        </a>
+        <a href="https://www.tiktok.com/@djuancarlospeluqueria?lang=es-419">
+            <img src="bostraap/icons/facebook.svg" alt="question">
+        </a>
+        <a href="https://www.instagram.com/djuancarlospeluqueria/">
+            <img src="bostraap/icons/instagram.svg" alt="notification">
+        </a>
+        <a th:href="@{/login}" href="Login.html">
+            <img src="bostraap/icons/Starter pfp.jpg" alt="img-user" class="user">
+        </a>
+    </div>
+</header>
+<div class="sidebar" id="sidebar">
+    <nav>
+        <ul>
+            <li>
+                <a th:href="@{/index}" href="index2.html" class="search">
+                    <img src="bostraap/icons/home.svg" alt="">
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/ServiciosIn}" href="servicios.html" class="selected">
+                    <img src="bostraap/icons/servicios.svg" alt="">
+                    <span>Servicios</span>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/estilistas}" href="estilistas.html" class="search">
+                    <img src="bostraap/icons/estilista.svg" alt="">
+                    <span>Estilistas</span>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/Ubicacion}" href="ubicacion.html" class="search">
+                    <img src="bostraap/icons/location.svg" alt="">
+                    <span>Ubicacion</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="footer">
+        <div class="user">
+            <div class="user-data">
+                    <span class="nombre"> Todo los derechos reservados recaen en la empresa D'Juan Carlos
+                        Peluqueria</span>
+            </div>
+        </div>
+    </div>
+</div>
+<main id="main">
+    <section class="home">
+        <h1 class="bienvenido">SERVICIOS</h1>
+        <h1>Escoge el servicio que quieres agendar</h1>
+    </section>
+    <div class="services-grid">
+        <div class="service-card">
+            <h3>Damas</h3>
+            <p>Resalta tu belleza femenina.</p>
+            <a href="servicios/damas.html" class="btn-gold">Ver</a>
+        </div>
+
+        <div class="service-card">
+            <h3>Caballeros</h3>
+            <p>Mejora tu apariencia.</p>
+            <a href="servicios/caballeros.html" class="btn-gold">Ver</a>
+        </div>
+
+        <div class="service-card">
+            <h3>Color</h3>
+            <p>Haz un pequeño cambio de look.</p>
+            <a href="servicios.html" class="btn-gold">Ver</a>
+        </div>
+
+        <div class="service-card">
+            <h3>Manos y Pies</h3>
+            <p>Mantanlos delicados.</p>
+            <a href="servicios.html" class="btn-gold">Ver</a>
+        </div>
+
+        <div class="service-card">
+            <h3>Depilacion</h3>
+            <p>Desaste de el bello no deseado.</p>
+            <a href="servicios.html" class="btn-gold">Ver</a>
+        </div>
+
+        <div class="service-card">
+            <h3>Cejas y Pestañas</h3>
+            <p>Abre los ojos y ponlos hermosos.</p>
+            <a href="servicios.html" class="btn-gold">Ver</a>
+        </div>
+
+    </div>
+    </section>
+</main>
+<script th:src="@{/javascript/java.js}" src="/javascript/java.js"></script>
+</body>
+
+</html>

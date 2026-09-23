@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Usuario - D'juan Carlos Peluqueria</title>
+    <link rel="stylesheet" th:href="@{/css/crearU.css}" href="/css/crearU.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="menu-btn sidebar-btn" id="sidebar-btn"><i class="bx bx-menu"></i></div>
+
+<div class="sidebar" id="sidebar">
+    <div class="header">
+        <div class="menu-btn" id="menu-btn">
+            <i class='bx bx-chevron-left'></i>
+        </div>
+    </div>
+    <div class="brand">
+        <img th:src="@{/bostraap/icons/logo.jpeg}" src="/bostraap/icons/logo.jpeg" alt="logo">
+        <span>D'juan Carlos Peluqueria</span>
+    </div>
+    <div class="menu_c">
+        <ul class="menu">
+            <li class="menu-item menu-item-static">
+                <a th:href="@{/Admin}" href="Admin.html" class="menu-link">
+                    <i class='bx bx-home'></i>
+                    <span>Perfil</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-dropdown active">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-user'></i>
+                    <span>Usuarios</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li> <a class="sub-menu-link" th:href="@{/usuarios}" href="ListadoU.html">Listado de usuarios</a></li>
+                    <li> <a class="sub-menu-link active" th:href="@{/usuarios/crear}" href="crearU.html">Crear un usuario</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-cut'></i>
+                    <span>Servicios</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li><a class="sub-menu-link" th:href="@{/servicios}" href="ListadoS.html">Listado de servicios</a></li>
+                    <li><a class="sub-menu-link" th:href="@{/servicios/crear}" href="crearS.html">Crear servicios</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-calendar'></i>
+                    <span>Citas</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li> <a class="sub-menu-link" th:href="@{/citas}" href="listadoC.html">Listado de citas</a></li>
+                    <li> <a class="sub-menu-link" th:href="@{/citas/crear}" href="crearC.html">Crear citas</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-package'></i>
+                    <span>Insumos</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li> <a class="sub-menu-link" th:href="@{/insumos}" href="listadoI.html">Listado de insumos</a></li>
+                    <li> <a class="sub-menu-link" th:href="@{/insumos/crear}" href="CrearI.html">Crear insumos</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-receipt'></i>
+                    <span>Facturas</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+
+                <ul class="sub-menu">
+                    <li>
+                        <a class="sub-menu-link"
+                           th:href="@{/facturas}"
+                           href="ListadoF.html">
+                            Listado de facturas
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="sub-menu-link"
+                           th:href="@{/facturas/crear}"
+                           href="FormularioFactura.html">
+                            Crear factura
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="footer">
+        <ul class="menu">
+            <li class="menu-item menu-item-static">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-bell'></i>
+                    <span>Notificaciones</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-static">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-cog'></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+        <div class="user">
+            <div class="user-img">
+                <img th:src="@{/bostraap/icons/Starter pfp.jpg}" src="/bostraap/icons/Starter pfp.jpg" alt="user">
+            </div>
+            <div class="user-info">
+                <span class="nombre">Brayan</span>
+                <span class="email">brayan@example.com</span>
+            </div>
+            <div class="user-icon">
+                <a th:href="@{/login}"><i class='bx bx-exit'></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main>
+    <div class="dashboard-grid-crear">
+        <div class="caja formulario-wrapper">
+            <div class="formulario-container">
+                <h2>Crear Usuario</h2>
+
+                <form class="form-usuario" id="userForm" onsubmit="crearUsuario(event)">
+                    <input type="hidden" id="estado" value="Activo">
+                    <input type="hidden" id="cargo" value="Cliente">
+
+                    <div class="campo">
+                        <label for="TipoDocumento">Tipo de Documento</label>
+                        <select id="TipoDocumento" name="tipoDocumento" required>
+                            <option value="" disabled selected>Seleccione su tipo de documento...</option>
+                            <option value="CC">CC</option>
+                            <option value="CE">CE</option>
+                            <option value="TI">TI</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="numDocumento">Número de Documento</label>
+                        <input type="number" id="numDocumento" name="numDocumento" required placeholder="Número de Documento">
+                    </div>
+
+                    <div class="campo">
+                        <label for="nombreCompleto">Nombre Completo</label>
+                        <input type="text" id="nombreCompleto" name="nombreCompleto" required placeholder="Nombre Completo">
+                    </div>
+
+                    <div class="campo">
+                        <label for="telefono">Teléfono</label>
+                        <input type="number" id="telefono" name="telefono" required placeholder="Teléfono">
+                    </div>
+
+                    <div class="campo">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required placeholder="Correo Electrónico">
+                    </div>
+
+                    <div class="campo">
+                        <label for="direccion">Dirección</label>
+                        <input type="text" id="direccion" name="direccion" required placeholder="Dirección">
+                    </div>
+
+                    <div class="campo">
+                        <label for="genero">Género</label>
+                        <select id="genero" name="genero" required>
+                            <option value="" disabled selected>Seleccione su género...</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="contrasenia">Contraseña</label>
+                        <input type="password" id="contrasenia" name="contrasenia" required placeholder="Asigne una contraseña segura">
+                    </div>
+
+                    <div class="campo">
+                        <label for="idRolFK">Rol del Usuario</label>
+                        <select id="idRolFK" name="idRolFK" required>
+                            <option value="" disabled selected>Seleccione un Rol...</option>
+                            <option value="1">Administrador</option>
+                            <option value="2">Empleado</option>
+                            <option value="3">Cliente</option>
+                        </select>
+                    </div>
+
+                    <div class="botones">
+                        <button type="submit" class="btn-guardar">Crear Usuario</button>
+                        <button type="reset" class="btn-limpiar" id="btnLimpiar">Limpiar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="paneles-derecha">
+            <div class="instrucciones-wrapper">
+                <button type="button" id="btnInstrucciones" class="btn-instrucciones">
+                    <span><i class='bx bx-help-circle'></i> Modo De Uso</span>
+                    <i class='bx bx-chevron-down' id="iconoFlecha"></i>
+                </button>
+
+                <div class="instrucciones-contenido" id="contenidoInstrucciones">
+                    <ul>
+                        <li>Seleccione el tipo de identificación legal.</li>
+                        <li>Ingrese el número de documento sin puntos ni comas.</li>
+                        <li>Escriba el nombre completo del usuario.</li>
+                        <li>Registre un teléfono de contacto válido (10 dígitos).</li>
+                        <li>Asigne un correo único para su inicio de sesión.</li>
+                        <li>Ingrese la dirección de residencia actual.</li>
+                        <li>Asigne una clave inicial y defina el rol del usuario en el sistema.</li>
+                        <li>Haga clic en 'Crear Usuario' para guardar el registro.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="caja-panel preview-panel">
+                <h3><i class='bx bx-user-pin'></i> Vista Previa del Usuario</h3>
+                <div class="preview-card-body">
+                    <div class="avatar-preview">
+                        <i class='bx bx-user'></i>
+                    </div>
+                    <div class="preview-info">
+                        <h4 id="prevNombre">Nombre del Usuario</h4>
+                        <p id="prevDoc">Doc: -</p>
+                        <p id="prevCorreo">correo@ejemplo.com</p>
+                        <span id="prevRol" class="badge-rol">Rol No Seleccionado</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="caja-panel recientes-panel">
+                <h3><i class='bx bx-time-five'></i> Registrados Recientemente</h3>
+                <ul id="listaUltimosUsuarios" class="lista-recientes">
+                    <li class="sin-registros">Cargando usuarios...</li>
+                </ul>
+                <a th:href="@{/usuarios}" href="ListadoU.html" class="btn-ver-todos">Ver Todos los Usuarios</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script th:src="@{/javascript/UsuarioC.js}" src="/javascript/UsuarioC.js"></script>
+<script th:src="@{/javascript/Permisos.js}"></script>
+</body>
+</html>

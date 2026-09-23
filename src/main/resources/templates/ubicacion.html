@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D'juan Carlos Peluqueria</title>
+    <link rel="stylesheet" th:href="@{/css/estilo2.css}" href="/css/estilo2.css">
+</head>
+
+<body>
+<header>
+    <div class="left">
+        <div class="menu_container">
+            <div class="menu" id="menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="brad">
+            <img th:src="@{/bostraap/icons/logo2.jpeg}" src="bostraap/icons/logo2.jpeg" alt="icon-udemy" class="logo">
+            <span class="name">D'Juan Carlos Peluqueria </span>
+        </div>
+    </div>
+    <div class="right">
+        <a
+                href="https://api.whatsapp.com/send?phone=573212276888&text=Hola%2C%20D%20Juan%20Carlos%20Peluquer%C3%ADa.%20Estaba%20viendo%20sus%20redes%20sociales%20y%20me%20interesar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%3A">
+            <img src="bostraap/icons/whas.svg" alt="chat">
+        </a>
+        <a href="https://www.tiktok.com/@djuancarlospeluqueria?lang=es-419">
+            <img src="bostraap/icons/facebook.svg" alt="question">
+        </a>
+        <a href="https://www.instagram.com/djuancarlospeluqueria/">
+            <img src="bostraap/icons/instagram.svg" alt="notification">
+        </a>
+        <a th:href="@{/login}" href="Login.html">
+            <img src="bostraap/icons/Starter pfp.jpg" alt="img-user" class="user">
+        </a>
+    </div>
+</header>
+<div class="sidebar" id="sidebar">
+    <nav>
+        <ul>
+            <li>
+                <a th:href="@{/index}" href="index2.html" class="search">
+                    <img src="bostraap/icons/home.svg" alt="">
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/ServiciosIn}" href="servicios.html" class="search">
+                    <img src="bostraap/icons/servicios.svg" alt="">
+                    <span>Servicios</span>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/estilistas}" href="estilistas.html" class="search">
+                    <img src="bostraap/icons/estilista.svg" alt="">
+                    <span>Estilistas</span>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/Ubicacion}" href="ubicacion.html" class="selected">
+                    <img src="bostraap/icons/location.svg" alt="">
+                    <span>Ubicacion</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="footer">
+        <div class="user">
+            <div class="user-data">
+                    <span class="nombre"> Todo los derechos reservados recaen en la empresa D'Juan Carlos
+                        Peluqueria</span>
+            </div>
+        </div>
+    </div>
+</div>
+<main id="main">
+    <section class="home">
+        <h1 class="bienvenido">Bienvenidos a D'Juan carlos peluqueria</h1>
+    </section>
+    <div class="ubicacion">
+        <h3>UBICACION</h3>
+        <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.782971009046!2d-74.07241408952765!3d4.63276979532257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a2eeb19252b%3A0x18fa00f1ffcdcf21!2sD%20Juan%20Carlos%20Peluquer%C3%ADa!5e0!3m2!1ses!2sco!4v1776007396266!5m2!1ses!2sco"></iframe>
+    </div>
+</main>
+<script th:src="@{/javascript/java.js}" src="/javascript/java.js"></script>
+</body>
+
+</html>

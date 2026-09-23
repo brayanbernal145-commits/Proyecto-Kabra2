@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D'juan Carlos Peluqueria</title>
+    <link rel="stylesheet" th:href="@{/css/estilo3.css}" href="/css/estilo3.css">
+</head>
+
+<body>
+<header>
+    <div class="left">
+        <div class="menu_container">
+            <div class="menu" id="menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="brad">
+            <img th:src="@{/bostraap/icons/logo2.jpeg}" src="bostraap/icons/logo2.jpeg" alt="icon-udemy" class="logo">
+            <span class="name">D'Juan Carlos Peluqueria</span>
+        </div>
+    </div>
+    <div class="right">
+        <a
+                href="https://api.whatsapp.com/send?phone=573212276888&text=Hola%2C%20D%20Juan%20Carlos%20Peluquer%C3%ADa.%20Estaba%20viendo%20sus%20redes%20sociales%20y%20me%20interesar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%3A">
+            <img src="bostraap/icons/whas.svg" alt="chat">
+        </a>
+        <a href="https://www.tiktok.com/@djuancarlospeluqueria?lang=es-419">
+            <img src="bostraap/icons/facebook.svg" alt="question">
+        </a>
+        <a href="https://www.instagram.com/djuancarlospeluqueria/">
+            <img src="bostraap/icons/instagram.svg" alt="notification">
+        </a>
+        <a th:href="@{/login}" href="Login.html">
+            <img src="bostraap/icons/Starter pfp.jpg" alt="img-user" class="user">
+        </a>
+    </div>
+</header>
+<div class="sidebar" id="sidebar">
+    <nav>
+        <ul>
+            <li>
+                <a th:href="@{/index}" href="index2.html" class="search">
+                    <img src="bostraap/icons/home.svg" alt="">
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/ServiciosIn}" href="servicios.html" class="search">
+                    <img src="bostraap/icons/servicios.svg" alt="">
+                    <span>Servicios</span>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/estilistas}" href="estilistas.html"  class="selected">
+                    <img src="bostraap/icons/estilista.svg" alt="">
+                    <span>Estilistas</span>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/Ubicacion}" href="ubicacion.html" class="search">
+                    <img src="bostraap/icons/location.svg" alt="">
+                    <span>Ubicacion</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="footer">
+        <div class="user">
+            <div class="user-data">
+                    <span class="nombre"> Todo los derechos reservados recaen en la empresa D'Juan Carlos
+                        Peluqueria</span>
+            </div>
+        </div>
+    </div>
+</div>
+<main id="main">
+    <section class="home">
+        <h1 class="bienvenido">Estilistas</h1>
+        <p>Observa a nuestros estilistas profesionales</p>
+    </section>
+    <section class="island" id="estilistas">
+        <h1> Nuestros Estilistas</h1>
+        <div class="staff-container">
+            <div class="staff-card">
+                <img class="staff-img" src="bostraap/Peluqueria/Andrea.jpeg">
+                <div class="staff-info">
+                    <h3>Andrea</h3>
+                    <p>Estilista</p>
+                </div>
+            </div>
+
+            <div class="staff-card">
+                <img class="staff-img" src="bostraap/Peluqueria/Angela.jpeg">
+                <div class="staff-info">
+                    <h3>Angela</h3>
+                    <p>Manicurista</p>
+                </div>
+            </div>
+
+            <div class="staff-card">
+                <img class="staff-img" src="bostraap/Peluqueria/Brandon.jpeg">
+                <div class="staff-info">
+                    <h3>Brandon</h3>
+                    <p>Estilista</p>
+                </div>
+            </div>
+
+            <div class="staff-card">
+                <img class="staff-img" src="bostraap/Peluqueria/Carlos.jpeg">
+                <div class="staff-info">
+                    <h3>Carlos</h3>
+                    <p>Estilista</p>
+                </div>
+            </div>
+
+            <div class="staff-card">
+                <img class="staff-img" src="bostraap/Peluqueria/Daniel.jpeg">
+                <div class="staff-info">
+                    <h3>Daniel</h3>
+                    <p>Estilista</p>
+                </div>
+            </div>
+
+            <div class="staff-card">
+                <img class="staff-img" src="bostraap/Peluqueria/Daniela.jpeg">
+                <div class="staff-info">
+                    <h3>Daniela</h3>
+                    <p>Administrativa</p>
+                </div>
+            </div>
+
+            <div class="staff-card">
+                <img class="staff-img" src="bostraap/Peluqueria/Diana.jpeg">
+                <div class="staff-info">
+                    <h3>Diana</h3>
+                    <p>Integral</p>
+                </div>
+            </div>
+
+            <div class="staff-card">
+                <img class="staff-img" src="bostraap/Peluqueria/Emilse.jpeg">
+                <div class="staff-info">
+                    <h3>Emilse</h3>
+                    <p>Manicurista</p>
+                </div>
+            </div>
+
+            <div class="staff-card">
+                <img class="staff-img" src="bostraap/Peluqueria/Erika.jpeg">
+                <div class="staff-info">
+                    <h3>Erika</h3>
+                    <p>Estilista</p>
+                </div>
+            </div>
+
+            <div class="staff-card">
+                <img class="staff-img" src="bostraap/Peluqueria/Estefany.jpeg">
+                <div class="staff-info">
+                    <h3>Estefany</h3>
+                    <p>Manicurista</p>
+                </div>
+            </div>
+
+            <div class="staff-card">
+                <img class="staff-img" src="bostraap/Peluqueria/Helen.jpeg">
+                <div class="staff-info">
+                    <h3>Hellen</h3>
+                    <p>Administrativa</p>
+                </div>
+            </div>
+
+            <div class="staff-card">
+                <img class="staff-img" src="bostraap/Peluqueria/Juan Carlos.jpeg">
+                <div class="staff-info">
+                    <h3>Juan Carlos</h3>
+                    <p>Estilista</p>
+                </div>
+            </div>
+
+            <div class="staff-card">
+                <img class="staff-img" src="bostraap/Peluqueria/Julieth.jpeg">
+                <div class="staff-info">
+                    <h3>Julieth</h3>
+                    <p>Integral</p>
+                </div>
+            </div>
+
+            <div class="staff-card">
+                <img class="staff-img" src="bostraap/Peluqueria/Karen.jpeg">
+                <div class="staff-info">
+                    <h3>Karen</h3>
+                    <p>Estilista</p>
+                </div>
+            </div>
+
+            <div class="staff-card">
+                <img class="staff-img" src="bostraap/Peluqueria/Mauren.jpeg">
+                <div class="staff-info">
+                    <h3>Mauren</h3>
+                    <p>Estilista</p>
+                </div>
+            </div>
+
+            <div class="staff-card">
+                <img class="staff-img" src="bostraap/Peluqueria/Natalie.jpeg">
+                <div class="staff-info">
+                    <h3>Natalie</h3>
+                    <p>Manicurista</p>
+                </div>
+            </div>
+
+            <div class="staff-card">
+                <img class="staff-img" src="bostraap/Peluqueria/Paula.jpeg">
+                <div class="staff-info">
+                    <h3>Paula</h3>
+                    <p>Manicurista</p>
+                </div>
+            </div>
+
+            <div class="staff-card">
+                <img class="staff-img" src="bostraap/Peluqueria/Yaneth.jpeg">
+                <div class="staff-info">
+                    <h3>Yaneth</h3>
+                    <p>Manicurista</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<script th:src="@{/javascript/java.js}" src="/javascript/java.js"></script>
+</body>
+
+</html>

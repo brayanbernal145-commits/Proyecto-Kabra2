@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Usuarios - D'juan Carlos Peluquería</title>
+    <link rel="stylesheet" th:href="@{/css/Listado.css}" href="/css/Listado.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="menu-btn sidebar-btn" id="sidebar-btn">
+    <i class="bx bx-menu"></i>
+    <i class="bx bx-x"></i>
+</div>
+
+<div class="sidebar" id="sidebar">
+    <div class="header">
+        <div class="menu-btn" id="menu-btn">
+            <i class='bx bx-chevron-left'></i>
+        </div>
+    </div>
+    <div class="brand">
+        <img th:src="@{/bostraap/icons/logo2.jpeg}" src="/bostraap/icons/logo2.jpeg" alt="logo">
+        <span>D'juan Carlos Peluqueria</span>
+    </div>
+    <div class="menu_c">
+        <ul class="menu">
+            <li class="menu-item menu-item-static">
+                <a th:href="@{/Admin}" href="Admin.html" class="menu-link">
+                    <i class='bx bx-home'></i>
+                    <span>Perfil</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-dropdown active">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-user'></i>
+                    <span>Usuarios</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li> <a class="sub-menu-link active" th:href="@{/usuarios}" href="ListadoU.html">Listado de usuarios</a></li>
+                    <li> <a class="sub-menu-link" th:href="@{/usuarios/crear}" href="crearU.html">Crear un usuario</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-cut'></i>
+                    <span>Servicios</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li><a class="sub-menu-link" th:href="@{/servicios}" href="ListadoS.html">Listado de servicios</a></li>
+                    <li><a class="sub-menu-link" th:href="@{/servicios/crear}" href="crearS.html">Crear servicios</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-calendar'></i>
+                    <span>Citas</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li> <a class="sub-menu-link" th:href="@{/citas}" href="listadoC.html">Listado de citas</a></li>
+                    <li> <a class="sub-menu-link" th:href="@{/citas/crear}" href="crearC.html">Crear citas</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-package'></i>
+                    <span>Insumos</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li> <a class="sub-menu-link" th:href="@{/insumos}" href="listadoI.html">Listado de insumos</a></li>
+                    <li> <a class="sub-menu-link" th:href="@{/insumos/crear}" href="CrearI.html">Crear insumos</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-receipt'></i>
+                    <span>Facturas</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+
+                <ul class="sub-menu">
+                    <li>
+                        <a class="sub-menu-link"
+                           th:href="@{/facturas}"
+                           href="ListadoF.html">
+                            Listado de facturas
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="sub-menu-link"
+                           th:href="@{/facturas/crear}"
+                           href="FormularioFactura.html">
+                            Crear factura
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="footer">
+        <div class="user">
+            <div class="user-img">
+                <img th:src="@{/bostraap/icons/Starter pfp.jpg}" src="bostraap/icons/Starter pfp.jpg" alt="user">
+            </div>
+            <div class="user-info">
+                <span class="name" id="user-cargo">Cliente</span>
+                <span class="email" id="user-email">cargando...</span>
+            </div>
+            <div class="user-icon">
+                <a th:href="@{/login}"><i class='bx bx-exit'></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main>
+    <div class="dashboard-grid">
+        <div class="caja tabla-wrapper">
+            <div class="tabla-container">
+                <h2>Listado de Usuarios</h2>
+                <div class="tabla-info">
+                    <span id="info-registros">Mostrando 0 de 0 usuarios</span>
+                    <span id="info-pagina">Página 1 de 1</span>
+                </div>
+
+                <table class="tabla-usuarios">
+                    <thead>
+                    <tr>
+                        <th>Nombre Completo</th>
+                        <th>Tipo Doc.</th>
+                        <th>N° Documento</th>
+                        <th>Género</th>
+                        <th>Dirección</th>
+                        <th>Email</th>
+                        <th>Teléfono</th>
+                        <th>Cargo</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tabla-body">
+                    </tbody>
+                </table>
+
+                <div class="paginacion" id="paginacion-container">
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script th:src="@{/javascript/listadoU.js}" src="/javascript/listadoU.js"></script>
+<script th:src="@{/javascript/Permisos.js}"></script>
+</body>
+</html>

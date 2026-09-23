@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - D'juan Carlos Peluqueria</title>
+    <!-- Rutas estáticas corregidas usando th:href y apuntando a static/ -->
+    <link rel="stylesheet" th:href="@{/css/formulario.css}" href="/css/formulario.css">
+</head>
+<body>
+
+<button class="back">
+    <a class="a"th:href="@{/index}" href="index2.html">
+        <img th:src="@{/bostraap/icons/flecha_bla.svg}" src="bostraap/icons/flecha_bla.svg" alt="flecha">
+    </a>
+</button>
+
+<div class="caja1">
+    <!-- th:action dirige la petición POST al controlador de login en Spring Boot -->
+    <form id="formLogin" th:action="@{/login}" method="POST">
+        <h2>Bienvenido</h2>
+        <p>Inicia sesión para continuar</p>
+
+        <!-- th:if para mostrar un mensaje si las credenciales son incorrectas -->
+        <div th:if="${param.error}" class="alert-error" style="color: red; margin-bottom: 10px;">
+            Documento o contraseña incorrectos.
+        </div>
+
+        <input type="number" id="numDocumento" name="numDocumento" required placeholder="Número de Documento">
+        <input type="password" id="contrasenia" name="contrasenia" required placeholder="Contraseña">
+
+        <button class="boton1" type="submit">Iniciar Sesión</button>
+    </form>
+
+    <!-- Enlace hacia la vista de registro mapeada en Spring Boot -->
+    <a th:href="@{/registro}" href="registro.html">
+        ¿No tienes una cuenta? Regístrate
+    </a>
+</div>
+
+<!-- Script cargado desde la carpeta static/javascript -->
+<script th:src="@{/javascript/Login.js}" src="/javascript/Login.js"></script>
+
+</body>
+</html>

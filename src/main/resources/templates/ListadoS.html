@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - D'juan Carlos Peluquería</title>
+    <link rel="stylesheet" th:href="@{/css/Listado.css}" href="/css/Listado.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="menu-btn sidebar-btn" id="sidebar-btn">
+    <i class="bx bx-menu"></i>
+    <i class="bx bx-x"></i>
+</div>
+
+<div class="sidebar" id="sidebar">
+    <div class="header">
+        <div class="menu-btn" id="menu-btn">
+            <i class='bx bx-chevron-left'></i>
+        </div>
+    </div>
+    <div class="brand">
+        <img th:src="@{/bostraap/icons/logo2.jpeg}" src="/bostraap/icons/logo2.jpeg" alt="logo">
+        <span>D'juan Carlos Peluqueria</span>
+    </div>
+    <div class="menu_c">
+        <ul class="menu">
+            <li class="menu-item menu-item-static">
+                <a th:href="@{/Admin}" href="Admin.html" class="menu-link">
+                    <i class='bx bx-home'></i>
+                    <span>Perfil</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-user'></i>
+                    <span>Usuarios</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li> <a class="sub-menu-link" th:href="@{/usuarios}" href="ListadoU.html">Listado de usuarios</a></li>
+                    <li> <a class="sub-menu-link" th:href="@{/usuarios/crear}" href="crearU.html">Crear un usuario</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-user'></i>
+                    <span>Facturas</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li> <a class="sub-menu-link" th:href="@{/facturas}" href="listadoF.html">Listado de usuarios</a></li>
+                    <li> <a class="sub-menu-link" th:href="@{/facturas/crear}" href="FormularioFactura.html">Crear un usuario</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown active">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-cut'></i>
+                    <span>Servicios</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li><a class="sub-menu-link active" th:href="@{/servicios}" href="ListadoS.html">Listado de servicios</a></li>
+                    <li><a class="sub-menu-link" th:href="@{/servicios/crear}" href="crearS.html">Crear servicios</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-calendar'></i>
+                    <span>Citas</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li> <a class="sub-menu-link" th:href="@{/citas}" href="listadoC.html">Listado de citas</a></li>
+                    <li> <a class="sub-menu-link" th:href="@{/citas/crear}" href="crearC.html">Crear citas</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-package'></i>
+                    <span>Insumos</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li> <a class="sub-menu-link" th:href="@{/insumos}" href="listadoI.html">Listado de insumos</a></li>
+                    <li> <a class="sub-menu-link" th:href="@{/insumos/crear}" href="CrearI.html">Crear insumos</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-receipt'></i>
+                    <span>Facturas</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+
+                <ul class="sub-menu">
+                    <li>
+                        <a class="sub-menu-link"
+                           th:href="@{/facturas}"
+                           href="ListadoF.html">
+                            Listado de facturas
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="sub-menu-link"
+                           th:href="@{/facturas/crear}"
+                           href="FormularioFactura.html">
+                            Crear factura
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="footer">
+        <ul class="menu">
+            <li class="menu-item menu-item-static">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-bell'></i>
+                    <span>Notificaciones</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-static">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-cog'></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+        <div class="user">
+            <div class="user-img">
+                <img th:src="@{/bostraap/icons/Starter pfp.jpg}" src="bostraap/icons/Starter pfp.jpg" alt="user">
+            </div>
+            <div class="user-info">
+                <span class="name" id="user-role">Administrador</span>
+                <span class="email" id="user-email">admin@correo.com</span>
+            </div>
+            <div class="user-icon">
+                <a th:href="@{/login}" href="login.html">
+                    <i class='bx bx-exit'></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main>
+    <div class="dashboard-grid">
+        <div class="caja tabla-wrapper">
+            <div class="tabla-container">
+                <h2>Listado de Servicios</h2>
+                <div class="tabla-info">
+                    <span id="info-registros">Cargando servicios...</span>
+                    <span id="info-pagina"></span>
+                </div>
+                <table class="tabla-usuarios">
+                    <thead>
+                    <tr>
+                        <th>Nombre Servicio</th>
+                        <th>Descripción</th>
+                        <th>Precio Base</th>
+                        <th>Categoría</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tabla-body">
+                    </tbody>
+                </table>
+                <div class="paginacion" id="paginacion-container">
+                </div>
+            </div>
+        </div>
+        <aside class="caja-filtros">
+            <h3>Filtrar Servicios</h3>
+
+            <div class="grupo-filtro">
+                <h4>Categorías</h4>
+                <button class="btn-filtro active" onclick="filtrarCategoria('TODAS', this)">Todas</button>
+                <button class="btn-filtro" onclick="filtrarCategoria('Manicura,Uñas,Pedicure', this)">Manicura, Uñas y Pedicure</button>
+                <button class="btn-filtro" onclick="filtrarCategoria('Color', this)">Tintes</button>
+                <button class="btn-filtro" onclick="filtrarCategoria('Depilación', this)">Depilacion</button>
+                <button class="btn-filtro" onclick="filtrarCategoria('Cejas y Pestañas', this)">Cejas y Pestañas</button>
+                <button class="btn-filtro" onclick="filtrarCategoria('Ellas', this)">Damas</button>
+                <button class="btn-filtro" onclick="filtrarCategoria('Ellos', this)">Barones</button>
+            </div>
+
+            <div class="grupo-filtro">
+                <h4>Disponibilidad</h4>
+                <button class="btn-filtro active" onclick="filtrarEstado('TODOS', this)">Ver Todos</button>
+                <button class="btn-filtro" onclick="filtrarEstado('Disponible', this)">Solo Disponibles</button>
+                <button class="btn-filtro" onclick="filtrarEstado('No Disponible', this)">No Disponibles</button>
+            </div>
+        </aside>
+    </div>
+</main>
+
+<script th:src="@{/javascript/ListadoS.js}" src="/javascript/ListadoS.js"></script>
+<script th:src="@{/javascript/Permisos.js}"></script>
+</body>
+</html>

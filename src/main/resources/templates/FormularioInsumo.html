@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Insumo - D'juan Carlos Peluqueria</title>
+    <!-- Rutas estáticas adaptadas para Spring Boot -->
+    <link rel="stylesheet" th:href="@{/css/CrearI.css}" href="/css/CrearI.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="menu-btn sidebar-btn" id="sidebar-btn"><i class="bx bx-menu"></i></div>
+
+<div class="sidebar" id="sidebar">
+    <div class="header">
+        <div class="menu-btn" id="menu-btn">
+            <i class='bx bx-chevron-left'></i>
+        </div>
+    </div>
+    <div class="brand">
+        <img th:src="@{/bostraap/icons/logo.jpeg}" src="/bostraap/icons/logo.jpeg" alt="logo">
+        <span>D'juan Carlos Peluqueria</span>
+    </div>
+    <div class="menu_c">
+        <ul class="menu">
+            <li class="menu-item menu-item-static">
+                <a th:href="@{/admin}" href="Administrador.html" class="menu-link">
+                    <i class='bx bx-home'></i>
+                    <span>Perfil</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-user'></i>
+                    <span>Usuarios</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li><a class="sub-menu-link" th:href="@{/usuarios}" href="ListadoU.html">Listado de usuarios</a></li>
+                    <li><a class="sub-menu-link" th:href="@{/usuarios/crear}" href="crearU.html">Crear un usuario</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-cut'></i>
+                    <span>Servicios</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li><a class="sub-menu-link" th:href="@{/servicios}" href="ListadoS.html">Listado de servicios</a></li>
+                    <li><a class="sub-menu-link" th:href="@{/servicios/crear}" href="crearS.html">Crear servicios</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-cut'></i>
+                    <span>Facturas</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li><a class="sub-menu-link" th:href="@{/factura}" href="listadoF.html">Listado de servicios</a></li>
+                    <li><a class="sub-menu-link" th:href="@{/factura/crear}" href="crearF.html">Crear servicios</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-calendar'></i>
+                    <span>Citas</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li><a class="sub-menu-link" th:href="@{/citas}" href="listadoC.html">Listado de citas</a></li>
+                    <li><a class="sub-menu-link" th:href="@{/citas/crear}" href="FormularioCita.html">Crear citas</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown active">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-package'></i>
+                    <span>Insumos</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li><a class="sub-menu-link" th:href="@{/insumos}" href="listadoI.html">Listado de insumos</a></li>
+                    <li><a class="sub-menu-link active" th:href="@{/insumos/crear}" href="FormularioInsumo.html">Crear insumos</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-receipt'></i>
+                    <span>Facturas</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+
+                <ul class="sub-menu">
+                    <li>
+                        <a class="sub-menu-link"
+                           th:href="@{/facturas}"
+                           href="ListadoF.html">
+                            Listado de facturas
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="sub-menu-link"
+                           th:href="@{/facturas/crear}"
+                           href="FormularioFactura.html">
+                            Crear factura
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="footer">
+        <ul class="menu">
+            <li class="menu-item menu-item-static">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-bell'></i>
+                    <span>Notificaciones</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-static">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-cog'></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+        <div class="user">
+            <div class="user-img">
+                <img th:src="@{/bostraap/icons/Starter pfp.jpg}" src="/bostraap/icons/Starter pfp.jpg" alt="user">
+            </div>
+            <div class="user-info">
+                <span class="nombre">Brayan</span>
+                <span class="email">brayan@example.com</span>
+            </div>
+            <div class="user-icon">
+                <a th:href="@{/login}" href="login.html">
+                    <i class='bx bx-exit'></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main>
+    <div class="dashboard-grid-crear">
+        <!-- Formulario de Insumo preparado para JavaScript -->
+        <div class="caja formulario-wrapper">
+            <div class="formulario-container">
+                <h2>Crear Insumo</h2>
+
+                <form class="form-servicio" id="InsumoForm">
+                    <div class="campo">
+                        <label for="nombreInsumo">Nombre del Insumo</label>
+                        <input type="text" id="nombreInsumo" name="nombreInsumo" required placeholder="Ej: Tinte Rubio Claro 8.1">
+                    </div>
+
+                    <div class="campo">
+                        <label for="descripcionInsumo">Descripción</label>
+                        <textarea id="descripcionInsumo" name="descripcionInsumo" required placeholder="Ej: Tubo de tinte 60ml con amoniaco"></textarea>
+                    </div>
+
+                    <div class="campo">
+                        <label for="fechaVencimiento">Fecha de Vencimiento</label>
+                        <input type="date" id="fechaVencimiento" name="fechaVencimiento" min="0" required placeholder="Ej: 06/05/2027">
+                    </div>
+
+                    <div class="campo">
+                        <label for="stockActual">Cantidad en Stock</label>
+                        <input type="number" id="stockActual" name="stockActual" min="0" required placeholder="Ej: 15">
+                    </div>
+
+                    <div class="campo">
+                        <label for="stockMinPosible">Stock minimo posible</label>
+                        <input type="number" id="stockMinPosible" name="stockMinPosible" min="5" required placeholder="Ej: 15">
+                    </div>
+
+
+                    <div class="campo">
+                        <label for="categoriaInsumo">Categoría</label>
+                        <select id="categoriaInsumo" name="categoriaInsumo" required>
+                            <option value="" disabled selected>Seleccione...</option>
+                            <option value="Tinte permanente">Tintes</option>
+                            <option value="Semipermanente">Semipermanente</option>
+                            <option value="Acrilico">Acrilico</option>
+                            <option value="Manicura">Manicura</option>
+                            <option value="Cejas y pestañas">Cejas y pestañas</option>
+                            <option value="Depilacion">Depilacion</option>
+                            <option value="Color">Color</option>
+                            <option value="Ellos">Barones</option>
+                            <option value="Ellas">Damas</option>
+
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="horaActualizacion">Hora de actualizacion</label>
+                        <input type="time" id="horaActualizacion" name="horaActualizacion" min="5" required placeholder="Ej: 15">
+                    </div>
+
+
+                    <div class="botones">
+                        <button type="submit" class="btn-guardar">Crear Insumo</button>
+                        <button type="reset" id="btnLimpiarInsumo" class="btn-limpiar">Limpiar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Columna Derecha con Paneles -->
+        <div class="paneles-derecha">
+            <!-- Modo de Uso -->
+            <div class="instrucciones-wrapper">
+                <button type="button" id="btnInstrucciones" class="btn-instrucciones">
+                    <span><i class='bx bx-help-circle'></i> Modo De Uso</span>
+                    <i class='bx bx-chevron-down' id="iconoFlecha"></i>
+                </button>
+
+                <div class="instrucciones-contenido" id="contenidoInstrucciones">
+                    <ul>
+                        <li>Ingrese un nombre descriptivo para el insumo o producto.</li>
+                        <li>Detalle las especificaciones (marca, presentación, ml/gr).</li>
+                        <li>Indique la cantidad exacta disponible en inventario.</li>
+                        <li>Seleccione la categoría correspondiente del insumo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Vista Previa del Insumo -->
+            <div class="caja-panel preview-panel">
+                <h3><i class='bx bx-package'></i> Vista Previa del Insumo</h3>
+                <div class="preview-card-body">
+                    <div class="avatar-preview">
+                        <i class='bx bx-box'></i>
+                    </div>
+                    <div class="preview-info">
+                        <h4 id="prevNombreI">Nombre del Insumo</h4>
+                        <p id="prevDescI">Descripción del insumo...</p>
+                        <p id="prevStockI"><strong>Stock:</strong>
+                        <span id="prevCategoriaI" class="badge-rol">Sin Categoría</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insumos Recientes -->
+            <div class="caja-panel recientes-panel">
+                <h3><i class='bx bx-history'></i> Registrados Recientemente</h3>
+                <ul id="listaUltimosInsumos" class="lista-recientes">
+                    <li class="sin-registros">Cargando insumos...</li>
+                </ul>
+                <a th:href="@{/insumos}" href="listadoI.html" class="btn-ver-todos">Ver Todos los Insumos</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Carga de script con Thymeleaf -->
+<script th:src="@{/javascript/InsumoC.js}" src="/javascript/InsumoC.js"></script>
+<script th:src="@{/javascript/Permisos.js}"></script>
+</body>
+</html>

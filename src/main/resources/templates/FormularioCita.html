@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cita - D'juan Carlos Peluqueria</title>
+    <!-- Rutas estáticas con Thymeleaf para CSS e iconos -->
+    <link rel="stylesheet" th:href="@{/css/CrearC.css}" href="/css/CrearC.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="menu-btn sidebar-btn" id="sidebar-btn"><i class="bx bx-menu"></i></div>
+
+<div class="sidebar" id="sidebar">
+    <div class="header">
+        <div class="menu-btn" id="menu-btn">
+            <i class='bx bx-chevron-left'></i>
+        </div>
+    </div>
+    <div class="brand">
+        <img th:src="@{/bostraap/icons/logo.jpeg}" src="/bostraap/icons/logo.jpeg" alt="logo">
+        <span>D'juan Carlos Peluqueria</span>
+    </div>
+    <div class="menu_c">
+        <ul class="menu">
+            <li class="menu-item menu-item-static">
+                <a th:href="@{/admin}" href="Administrador.html" class="menu-link">
+                    <i class='bx bx-home'></i>
+                    <span>Perfil</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-user'></i>
+                    <span>Usuarios</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li><a class="sub-menu-link" th:href="@{/usuarios}" href="ListadoU.html">Listado de usuarios</a></li>
+                    <li><a class="sub-menu-link" th:href="@{/usuarios/crear}" href="crearU.html">Crear un usuario</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-cut'></i>
+                    <span>Servicios</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li><a class="sub-menu-link" th:href="@{/servicios}" href="ListadoS.html">Listado de servicios</a></li>
+                    <li><a class="sub-menu-link" th:href="@{/servicios/crear}" href="crearS.html">Crear servicios</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown active">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-calendar'></i>
+                    <span>Citas</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li><a class="sub-menu-link" th:href="@{/citas}" href="listadoC.html">Listado de citas</a></li>
+                    <li><a class="sub-menu-link active" th:href="@{/citas/crear}" href="FormularioCita.html">Crear citas</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-package'></i>
+                    <span>Insumos</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li><a class="sub-menu-link" th:href="@{/insumos}" href="listadoI.html">Listado de insumos</a></li>
+                    <li><a class="sub-menu-link" th:href="@{/insumos/crear}" href="FormularioInsumo.html">Crear insumos</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-receipt'></i>
+                    <span>Facturas</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+
+                <ul class="sub-menu">
+                    <li>
+                        <a class="sub-menu-link"
+                           th:href="@{/facturas}"
+                           href="ListadoF.html">
+                            Listado de facturas
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="sub-menu-link"
+                           th:href="@{/facturas/crear}"
+                           href="FormularioFactura.html">
+                            Crear factura
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="footer">
+        <ul class="menu">
+            <li class="menu-item menu-item-static">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-bell'></i>
+                    <span>Notificaciones</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-static">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-cog'></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+        <div class="user">
+            <div class="user-img">
+                <img th:src="@{/bostraap/icons/Starter pfp.jpg}" src="/bostraap/icons/Starter pfp.jpg" alt="user">
+            </div>
+            <div class="user-info">
+                <span class="nombre">Brayan</span>
+                <span class="email">brayan@example.com</span>
+            </div>
+            <div class="user-icon">
+                <a th:href="@{/login}" href="login.html">
+                    <i class='bx bx-exit'></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main>
+    <div class="dashboard-grid-crear">
+        <!-- Formulario Citas preparado para JS -->
+        <div class="caja formulario-wrapper">
+            <div class="formulario-container">
+                <h2>Crear Cita</h2>
+
+                <form class="form-cita" id="citaForm">
+                    <div class="campo">
+                        <label for="buscarUsuario">Cliente</label>
+                        <input type="text" id="buscarUsuario" list="listaUsuarios" placeholder="Escribe el nombre del cliente..." required autocomplete="off">
+                        <datalist id="listaUsuarios"></datalist>
+                        <input type="hidden" id="idUsuarioFK" name="idUsuarioFK">
+                    </div>
+
+                    <div class="campo">
+                        <label for="buscarServicio">Servicio</label>
+                        <input type="text" id="buscarServicio" list="listaServicios" placeholder="Escribe el servicio..." required autocomplete="off">
+                        <datalist id="listaServicios"></datalist>
+                        <input type="hidden" id="idServicioFK" name="idServicioFK">
+                    </div>
+
+                    <div class="campo">
+                        <label for="idInsumoFK">Insumo</label>
+                        <select id="idInsumoFK" name="idInsumoFK">
+                            <option value="">-- Seleccione un insumo (Opcional) --</option>
+                            <!-- Se llenará automáticamente con JS -->
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="fecha">Fecha de la Cita</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="horaInicio">Hora Inicio</label>
+                        <input type="time" id="horaInicio" name="horaInicio" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="horaFinal">Hora Finalización</label>
+                        <input type="time" id="horaFinal" name="horaFinal" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="estado">Estado</label>
+                        <select id="estado" name="estado" required>
+                            <option value="Pendiente" selected>Pendiente</option>
+                            <option value="Confirmada">Confirmada</option>
+                            <option value="Cancelada">Cancelada</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="observacion">Observaciones</label>
+                        <input type="text" id="observacion" name="observacion" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="totalServicio">Total de la cita</label>
+                        <input type="number" id="totalServicio" name="totalServicio" required>
+                    </div>
+
+                    <div class="botones">
+                        <button type="submit" class="btn-guardar">Agendar Cita</button>
+                        <button type="reset" id="btnLimpiarCita" class="btn-limpiar">Limpiar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Paneles de Apoyo (Derecha) -->
+        <div class="paneles-derecha">
+            <!-- Modo de uso -->
+            <div class="instrucciones-wrapper">
+                <button type="button" id="btnInstrucciones" class="btn-instrucciones">
+                    <span><i class='bx bx-help-circle'></i> Modo De Uso</span>
+                    <i class='bx bx-chevron-down' id="iconoFlecha"></i>
+                </button>
+                <div class="instrucciones-contenido" id="contenidoInstrucciones">
+                    <ul>
+                        <li>Seleccione un cliente registrado de la lista.</li>
+                        <li>Elija el servicio que se prestará.</li>
+                        <li>Defina la fecha y el horario asignado.</li>
+                        <li>Establezca el estado inicial de la cita.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Vista Previa de la Cita -->
+            <div class="caja-panel preview-panel">
+                <h3><i class='bx bx-calendar-event'></i> Vista Previa de la Cita</h3>
+                <div class="preview-card-body">
+                    <div class="avatar-preview">
+                        <i class='bx bx-time'></i>
+                    </div>
+                    <div class="preview-info">
+                        <h4 id="prevClienteC">Cliente No Seleccionado</h4>
+                        <p id="prevServicioC">Servicio: -</p>
+                        <p id="prevHorarioC">Fecha/Hora: --/-- --:--</p>
+                        <span id="prevEstadoC" class="badge-rol">Pendiente</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Citas Recientes -->
+            <div class="caja-panel recientes-panel">
+                <h3><i class='bx bx-calendar-check'></i> Citas Recientes</h3>
+                <ul id="listaUltimasCitas" class="lista-recientes">
+                    <li class="sin-registros">Cargando citas...</li>
+                </ul>
+                <a th:href="@{/citas}" href="listadoC.html" class="btn-ver-todos">Ver Todas las Citas</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Archivo JS adaptado para Spring Boot -->
+<script th:src="@{/javascript/CitaC.js}" src="/javascript/CitaC.js"></script>
+<script th:src="@{/javascript/Permisos.js}"></script>
+</body>
+</html>

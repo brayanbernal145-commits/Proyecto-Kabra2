@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario - D'juan Carlos Peluqueria</title>
+    <link rel="stylesheet" th:href="@{/css/usuario.css}" href="/css/usuario.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="menu-btn sidebar-btn" id="sidebar-btn">
+    <i class="bx bx-menu"></i>
+    <i class="bx bx-x"></i>
+</div>
+<div class="sidebar" id="sidebar">
+    <div class="header">
+        <div class="menu-btn" id="menu-btn">
+            <i class='bx bx-chevron-left'></i>
+        </div>
+    </div>
+    <div class="brand">
+        <img th:src="@{/bostraap/icons/logo2.jpeg}" src="bostraap/icons/logo2.jpeg" alt="logo">
+        <span>D'juan Carlos Peluqueria</span>
+    </div>
+    <div class="menu_c">
+        <ul class="menu">
+            <li class="menu-item menu-item-static active">
+                <a th:href="@{/Empleado}" href="#" class="menu-link">
+                    <i class='bx bx-home'></i>
+                    <span>Perfil</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-shopping-bag'></i>
+                    <span>Usuarios</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li> <a class="sub-menu-link" th:href="@{/usuarios}" href="ListadoU.html">Listado de usuarios</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-shopping-bag'></i>
+                    <span>Servicios</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li> <a class="sub-menu-link" th:href="@{/servicios}" href="listadoSer.html">Listado de servicios</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-file-blank'></i>
+                    <span>Citas</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li> <a class="sub-menu-link" th:href="@{/citas}" href="listadoC.html">Listado de citas</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-file-blank'></i>
+                    <span>Insumos</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li> <a class="sub-menu-link" th:href="@{/insumos}" href="listadoI.html">Listado de insumos</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="footer">
+        <ul class="menu">
+            <li class="menu-item menu-item-static">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-bell'></i>
+                    <span>Notificaciones</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-static">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-cog'></i>
+                    <span>settings</span>
+                </a>
+            </li>
+        </ul>
+        <div class="user">
+            <div class="user-img">
+                <img th:src="@{/bostraap/icons/starter pfp.jpg}" src="bostraap/icons/starter pfp.jpg" alt="user">
+            </div>
+            <div class="user-data">
+                <span class="name" id="user-perfil">Cargando...</span>
+                <span class="email" id="user-email">Cargando...</span>
+            </div>
+            <div class="user-icon">
+                <a th:href="@{/login}" id="btnCerrarSesion">
+                    <i class='bx bx-exit'></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<main>
+    <div class="dashboard-profile-grid">
+        <div class="caja">
+            <div class="caja-perfil">
+                <div class="perfil-img">
+                    <img th:src="@{/bostraap/icons/starter pfp.jpg}" src="bostraap/icons/starter pfp.jpg" alt="Foto de perfil">
+                </div>
+                <div class="perfil-info">
+                    <h2 id="nombreHeader">Cargando...</h2>
+                    <p id="perfilCargo">Empleado de la peluquería</p>
+                    <div class="datos">
+                        <span><strong>Nombre Completo:</strong> <span id="valNombre"></span></span>
+                        <span><strong>Tipo Documento:</strong> <span id="valTipoDoc"></span></span>
+                        <span><strong>Numero Documento:</strong> <span id="valNumDoc"></span></span>
+                        <span><strong>Teléfono:</strong> <span id="valTelefono"></span></span>
+                        <span><strong>Gmail:</strong> <span id="valEmail"></span></span>
+                        <span><strong>Direccion:</strong> <span id="valDireccion"></span></span>
+                        <span><strong>Genero:</strong> <span id="valGenero"></span></span>
+                        <span><strong>Estado:</strong> <span id="valEstado"></span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="actividad-semanal">
+            <h2>Actividad semanal</h2>
+            <div class="actividad-grid">
+                <div class="actividad-box"><span>Lunes</span><small>Revisar agenda</small></div>
+                <div class="actividad-box"><span>Martes</span><small>Citas abiertas</small></div>
+                <div class="actividad-box"><span>Miércoles</span><small>Revisión de stock</small></div>
+                <div class="actividad-box"><span>Jueves</span><small>Atención VIP</small></div>
+                <div class="actividad-box"><span>Viernes</span><small>Día de ofertas</small></div>
+                <div class="actividad-box"><span>Sábado</span><small>Alta demanda</small></div>
+                <div class="actividad-box"><span>Domingo</span><small>Descanso/plan</small></div>
+            </div>
+        </div>
+        <div class="kpi-card">
+            <h3><i class='bx bx-package'></i> Resumen de Insumos</h3>
+            <div class="kpi-content">
+                <div class="kpi-item">
+                    <span class="kpi-titulo">Total Disponibles</span>
+                    <span id="kpiTotalDisponibles" class="kpi-valor">0</span>
+                </div>
+                <div class="kpi-item alerta">
+                    <span class="kpi-titulo">Stock Crítico</span>
+                    <span id="kpiStockBajo" class="kpi-valor">0</span>
+                </div>
+            </div>
+            <a th:href="@{/insumos}" href="listadoI.html" class="btn-kpi">Ir a Insumos</a>
+        </div>
+        <div class="alert-card">
+            <h3><i class='bx bx-error-circle'></i> Alertas de Stock Bajo</h3>
+            <div id="listaAlertasStock" class="alertas-lista">
+                <span class="sin-alertas">Cargando alertas...</span>
+            </div>
+        </div>
+    </div>
+</main>
+<script th:src="@{/javascript/Usuario.js}" src="/javascript/Usuario.js"></script>
+<script th:src="@{/javascript/Permisos.js}"></script>
+</body>
+</html>

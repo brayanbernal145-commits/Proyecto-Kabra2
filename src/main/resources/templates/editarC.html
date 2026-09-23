@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Cita - D'juan Carlos Peluqueria</title>
+    <link rel="stylesheet" th:href="@{/css/CrearC.css}" href="/css/CrearC.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="menu-btn sidebar-btn" id="sidebar-btn">
+    <i class="bx bx-menu"></i>
+    <i class="bx bx-x"></i>
+</div>
+
+    <div class="sidebar" id="sidebar">
+        <div class="header">
+            <div class="menu-btn" id="menu-btn">
+                <i class='bx bx-chevron-left'></i>
+            </div>
+        </div>
+        <div class="brand">
+            <img th:src="@{/bostraap/icons/logo.jpeg}" src="/bostraap/icons/logo.jpeg" alt="logo">
+            <span>D'juan Carlos Peluqueria</span>
+        </div>
+        <div class="menu_c">
+            <ul class="menu">
+                <li class="menu-item menu-item-static">
+                    <a th:href="@{/admin}" href="Administrador.html" class="menu-link">
+                        <i class='bx bx-home'></i>
+                        <span>Perfil</span>
+                    </a>
+                </li>
+                <li class="menu-item menu-item-dropdown">
+                    <a href="#" class="menu-link">
+                        <i class='bx bx-user'></i>
+                        <span>Usuarios</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a class="sub-menu-link" th:href="@{/usuarios}" href="ListadoU.html">Listado de usuarios</a></li>
+                        <li><a class="sub-menu-link" th:href="@{/usuarios/crear}" href="crearU.html">Crear un usuario</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item menu-item-dropdown">
+                    <a href="#" class="menu-link">
+                        <i class='bx bx-cut'></i>
+                        <span>Servicios</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a class="sub-menu-link" th:href="@{/servicios}" href="ListadoS.html">Listado de servicios</a></li>
+                        <li><a class="sub-menu-link" th:href="@{/servicios/crear}" href="crearS.html">Crear servicios</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item menu-item-dropdown active">
+                    <a href="#" class="menu-link">
+                        <i class='bx bx-calendar'></i>
+                        <span>Citas</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a class="sub-menu-link" th:href="@{/citas}" href="listadoC.html">Listado de citas</a></li>
+                        <li><a class="sub-menu-link active" th:href="@{/citas/crear}" href="FormularioCita.html">Crear citas</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item menu-item-dropdown">
+                    <a href="#" class="menu-link">
+                        <i class='bx bx-package'></i>
+                        <span>Insumos</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a class="sub-menu-link" th:href="@{/insumos}" href="listadoI.html">Listado de insumos</a></li>
+                        <li><a class="sub-menu-link" th:href="@{/insumos/crear}" href="FormularioInsumo.html">Crear insumos</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item menu-item-dropdown">
+                    <a href="#" class="menu-link">
+                        <i class='bx bx-receipt'></i>
+                        <span>Facturas</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </a>
+
+                    <ul class="sub-menu">
+                        <li>
+                            <a class="sub-menu-link"
+                               th:href="@{/facturas}"
+                               href="ListadoF.html">
+                                Listado de facturas
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="sub-menu-link"
+                               th:href="@{/facturas/crear}"
+                               href="FormularioFactura.html">
+                                Crear factura
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="menu">
+                <li class="menu-item menu-item-static">
+                    <a href="#" class="menu-link">
+                        <i class='bx bx-bell'></i>
+                        <span>Notificaciones</span>
+                    </a>
+                </li>
+                <li class="menu-item menu-item-static">
+                    <a href="#" class="menu-link">
+                        <i class='bx bx-cog'></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="user">
+                <div class="user-img">
+                    <img th:src="@{/bostraap/icons/Starter pfp.jpg}" src="/bostraap/icons/Starter pfp.jpg" alt="user">
+                </div>
+                <div class="user-info">
+                    <span class="nombre">Brayan</span>
+                    <span class="email">brayan@example.com</span>
+                </div>
+                <div class="user-icon">
+                    <a th:href="@{/login}" href="login.html">
+                        <i class='bx bx-exit'></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<main>
+    <div class="dashboard-grid">
+        <div class="caja">
+            <form id="editarCitaForm">
+                <h2>Editar Cita</h2>
+                <p class="tip">Modifica los datos necesarios para actualizar la cita en la agenda.</p>
+
+                <input type="hidden" id="idCita" name="idCita">
+                <input type="hidden" id="idServicioFK" name="idServicioFK">
+                <input type="hidden" id="idUsuarioFK" name="idUsuarioFK">
+                <input type="hidden" id="idInsumoFK" name="idInsumoFK">
+
+                <div class="form-row">
+                    <div class="field-group">
+                        <small class="field-hint">Nombre del Cliente</small>
+                        <input type="text" id="buscarUsuario" name="buscarUsuario" list="listaClientes" placeholder="Escribe el nombre del cliente..." required autocomplete="off">
+                        <datalist id="listaClientes"></datalist>
+                    </div>
+
+                    <div class="field-group">
+                        <small class="field-hint">Servicio Específico</small>
+                        <input type="text" id="buscarServicio" name="buscarServicio" list="listaServicios" placeholder="Escribe el servicio..." required autocomplete="off">
+                        <datalist id="listaServicios"></datalist>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="field-group full-width">
+                        <small class="field-hint">Insumo utilizado</small>
+                        <input type="text" id="buscarInsumo" name="buscarInsumo" list="listaInsumos" placeholder="Escribe el nombre del insumo..." autocomplete="off">
+                        <datalist id="listaInsumos"></datalist>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="field-group full-width">
+                        <small class="field-hint">Fecha de la cita</small>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="field-group">
+                        <small class="field-hint">Hora de Inicio</small>
+                        <input type="time" id="horaInicio" name="horaInicio" required>
+                    </div>
+
+                    <div class="field-group">
+                        <small class="field-hint">Hora de Finalización</small>
+                        <input type="time" id="horaFinal" name="horaFinal" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="field-group">
+                        <small class="field-hint">Estado de la Cita</small>
+                        <select id="estado" name="estado" required>
+                            <option value="Pendiente">Pendiente</option>
+                            <option value="Confirmada">Confirmada</option>
+                            <option value="Completada">Completada</option>
+                            <option value="Cancelada">Cancelada</option>
+                        </select>
+                    </div>
+
+                    <div class="field-group">
+                        <small class="field-hint">Total del servicio ($)</small>
+                        <input type="number" step="0.01" min="0" id="totalServicio" name="totalServicio" required placeholder="Total del servicio">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="field-group full-width">
+                        <small class="field-hint">Observaciones</small>
+                        <input type="text" id="observacion" name="observacion" placeholder="Ej. Cambio de horario solicitado por el cliente">
+                    </div>
+                </div>
+
+                <button type="submit">Actualizar Cita</button>
+            </form>
+        </div>
+
+        <div class="instrucciones">
+            <h2>Guía para Actualizar una Cita</h2>
+            <p class="tip">Sigue estas pautas para reagendar o modificar la información adecuadamente.</p>
+            <ul class="instruction-list">
+                <li>Verifica los datos originales del cliente antes de confirmar los cambios.</li>
+                <li>Si cambias el servicio, asegúrate de verificar el valor asignado.</li>
+                <li>La hora final debe ser posterior a la hora de inicio para evitar traslapes.</li>
+                <li>Actualiza el estado a "Completada" o "Cancelada" según avance el agendamiento.</li>
+                <li>Registra en las observaciones la razón de la modificación.</li>
+            </ul>
+        </div>
+    </div>
+</main>
+
+<script src="/javascript/CitaA.js"></script>
+</body>
+</html>
+```

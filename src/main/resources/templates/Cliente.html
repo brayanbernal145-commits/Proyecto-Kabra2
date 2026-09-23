@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario - D'juan Carlos Peluqueria</title>
+    <link rel="stylesheet" th:href="@{/css/usuario2.css}" href="/css/usuario2.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="menu-btn sidebar-btn" id="sidebar-btn">
+    <i class="bx bx-menu"></i>
+    <i class="bx bx-x"></i>
+</div>
+<div class="sidebar" id="sidebar">
+    <div class="header">
+        <div class="menu-btn" id="menu-btn">
+            <i class='bx bx-chevron-left'></i>
+        </div>
+    </div>
+    <div class="brand">
+        <img th:src="@{/bostraap/icons/logo2.jpeg}" src="bostraap/icons/logo2.jpeg" alt="logo">
+        <span>D'juan Carlos Peluqueria</span>
+    </div>
+    <div class="menu_c">
+        <ul class="menu">
+            <li class="menu-item menu-item-static active">
+                <a th:href="@{/Cliente}" href="#" class="menu-link">
+                    <i class='bx bx-home'></i>
+                    <span>Perfil</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="footer">
+        <ul class="menu">
+            <li class="menu-item menu-item-static">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-bell'></i>
+                    <span>Notificaciones</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-static">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-cog'></i>
+                    <span>settings</span>
+                </a>
+            </li>
+        </ul>
+        <div class="user">
+            <div class="user-img">
+                <img th:src="@{/bostraap/icons/starter pfp.jpg}" src="bostraap/icons/starter pfp.jpg" alt="user">
+            </div>
+            <div class="user-data">
+                <span class="name" id="user-perfil">Cargando...</span>
+                <span class="email" id="user-email">Cargando...</span>
+            </div>
+            <div class="user-icon">
+                <a th:href="@{/login}" id="btnCerrarSesion">
+                    <i class='bx bx-exit'></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main>
+    <div class="dashboard-profile-grid">
+        <div class="caja">
+            <div class="caja-perfil">
+                <div class="perfil-img">
+                    <img th:src="@{/bostraap/icons/starter pfp.jpg}" src="bostraap/icons/starter pfp.jpg" alt="Foto de perfil">
+                </div>
+                <div class="perfil-info">
+                    <h2 id="nombreHeader">Cargando...</h2>
+                    <p id="perfilCargo">Cliente de la peluquería</p>
+
+                    <input type="hidden" id="idUsuarioFK" value="1">
+
+                    <div class="datos">
+                        <span><strong>Nombre Completo:</strong> <span id="valNombre"></span></span>
+                        <span><strong>Tipo Documento:</strong> <span id="valTipoDoc"></span></span>
+                        <span><strong>Numero Documento:</strong> <span id="valNumDoc"></span></span>
+                        <span><strong>Teléfono:</strong> <span id="valTelefono"></span></span>
+                        <span><strong>Gmail:</strong> <span id="valEmail"></span></span>
+                        <span><strong>Dirección:</strong> <span id="valDireccion"></span></span>
+                        <span><strong>Género:</strong> <span id="valGenero"></span></span>
+                        <span><strong>Estado:</strong> <span id="valEstado"></span></span>
+                    </div>
+
+                    <button class="btn-agendar" id="btnAgendarCita">
+                        <i class='bx bx-calendar-plus'></i> Agendar Nueva Cita
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="citas-cliente-card">
+            <h2>Mis Citas</h2>
+            <div class="citas-contenedor">
+                <div class="seccion-cita-grupo">
+                    <h3><i class='bx bx-time-five'></i> Próxima Cita</h3>
+                    <div class="cita-item-activa" id="proximaCitaContenedor">
+                        <div class="cita-info">
+                            <span class="cita-servicio" id="proximaCitaServicio">Cargando cita...</span>
+                            <small class="cita-fecha" id="proximaCitaFecha"><i class='bx bx-calendar'></i> --</small>
+                            <small class="cita-barbero" id="proximaCitaHorario"><i class='bx bx-time'></i> Horario: --</small>
+                            <small class="cita-barbero" id="proximaCitaTotal"><i class='bx bx-dollar-circle'></i> Total: $0</small>
+                        </div>
+                        <span class="badge badge-pendiente" id="proximaCitaEstado">PENDIENTE</span>
+                    </div>
+                </div>
+
+                <div class="seccion-cita-grupo">
+                    <h3><i class='bx bx-check-circle'></i> Completadas recientemente</h3>
+                    <div class="lista-completadas" id="listaCitasCompletadas">
+                        <div class="cita-item-completada">
+                            <div>
+                                <strong>Sin historial</strong>
+                                <small>No hay citas completadas aún</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="factura-card">
+            <div class="factura-header">
+                <i class='bx bx-receipt icono-factura'></i>
+                <div>
+                    <h3>Última Factura Digital</h3>
+                    <p>Comprobante de tu último servicio finalizado</p>
+                </div>
+            </div>
+            <div class="factura-body">
+                <div class="factura-detalles">
+                    <span><strong>Servicio:</strong> <span id="facturaServicio">N/A</span></span>
+                    <span><strong>Monto:</strong> <span id="facturaMonto">$0.00 COP</span></span>
+                    <span><strong>Fecha:</strong> <span id="facturaFecha">--/--/----</span></span>
+                </div>
+                <button class="btn-factura" id="btnVerFactura">
+                    <i class='bx bx-file'></i> Ver Factura Digital
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-agendar" id="modalAgendar">
+        <div class="modal-contenido">
+            <button class="btn-cerrar-modal" id="btnCerrarModal">&times;</button>
+
+            <div class="wizard-header">
+                <h2>Agendar Cita</h2>
+                <div class="wizard-pasos">
+                    <span class="paso-dot active" id="dotPaso1">1</span>
+                    <span class="paso-linea"></span>
+                    <span class="paso-dot" id="dotPaso2">2</span>
+                    <span class="paso-linea"></span>
+                    <span class="paso-dot" id="dotPaso3">3</span>
+                </div>
+            </div>
+
+            <div class="wizard-paso active" id="paso1">
+                <h3>Paso 1: Selecciona el Servicio</h3>
+                <label for="selectServicio">Servicio disponible:</label>
+                <select id="selectServicio" class="select-wizard">
+                    <option value="" disabled selected>Cargando servicios...</option>
+                </select>
+                <div class="wizard-acciones">
+                    <button class="btn-next" onclick="siguientePaso(2)">Siguiente</button>
+                </div>
+            </div>
+
+            <div class="wizard-paso" id="paso2">
+                <h3>Paso 2: Fecha y Horario</h3>
+
+                <label for="inputFecha">Fecha de la Cita:</label>
+                <input type="date" id="inputFecha" class="select-wizard">
+
+                <label for="inputHoraInicio">Hora de Inicio:</label>
+                <input type="time" id="inputHoraInicio" class="select-wizard">
+
+                <label for="selectInsumo">Insumo Requerido (Opcional):</label>
+                <select id="selectInsumo" class="select-wizard">
+                    <option value="">-- Sin insumo asignado --</option>
+                </select>
+
+                <label for="inputObservacion">Observación / Nota (Opcional):</label>
+                <input type="text" id="inputObservacion" placeholder="Ej: Prefiero degradado bajo..." maxlength="50" class="select-wizard">
+
+                <div class="wizard-acciones">
+                    <button class="btn-prev" onclick="siguientePaso(1)">Anterior</button>
+                    <button class="btn-next" onclick="siguientePaso(3)">Siguiente</button>
+                </div>
+            </div>
+
+            <div class="wizard-paso" id="paso3">
+                <h3>Paso 3: Confirmación</h3>
+                <p>Por favor confirma la información de tu cita antes de agendar.</p>
+                <div class="resumen-reserva">
+                    <p><strong>Servicio:</strong> <span id="resumenServicio">-</span></p>
+                    <p><strong>Fecha:</strong> <span id="resumenFecha">-</span></p>
+                    <p><strong>Horario:</strong> <span id="resumenHorario">-</span></p>
+                    <p><strong>Total Estimado:</strong> <span id="resumenTotal">$0.00</span></p>
+                    <p><strong>Observaciones:</strong> <span id="resumenObservacion">-</span></p>
+                </div>
+                <div class="wizard-acciones">
+                    <button class="btn-prev" onclick="siguientePaso(2)">Anterior</button>
+                    <button class="btn-agendar" id="btnConfirmarReserva">Confirmar Cita</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<script th:src="@{/javascript/Usuario2.js}" src="/javascript/Usuario2.js"></script>
+</body>
+</html>

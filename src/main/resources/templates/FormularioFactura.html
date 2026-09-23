@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Factura - D'juan Carlos Peluqueria</title>
+
+    <link rel="stylesheet" th:href="@{/css/CrearC.css}" href="/css/CrearC.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="menu-btn sidebar-btn" id="sidebar-btn">
+    <i class="bx bx-menu"></i>
+</div>
+
+<div class="sidebar" id="sidebar">
+
+    <div class="header">
+        <div class="menu-btn" id="menu-btn">
+            <i class='bx bx-chevron-left'></i>
+        </div>
+    </div>
+
+    <div class="brand">
+        <img th:src="@{/bostraap/icons/logo.jpeg}" src="/bostraap/icons/logo.jpeg" alt="logo">
+        <span>D'juan Carlos Peluqueria</span>
+    </div>
+
+    <div class="menu_c">
+        <ul class="menu">
+
+            <li class="menu-item menu-item-static">
+                <a th:href="@{/admin}" href="Administrador.html" class="menu-link">
+                    <i class='bx bx-home'></i>
+                    <span>Perfil</span>
+                </a>
+            </li>
+
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-user'></i>
+                    <span>Usuarios</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a class="sub-menu-link" th:href="@{/usuarios}" href="ListadoU.html">
+                            Listado de usuarios
+                        </a>
+                    </li>
+                    <li>
+                        <a class="sub-menu-link" th:href="@{/usuarios/crear}" href="crearU.html">
+                            Crear un usuario
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-cut'></i>
+                    <span>Servicios</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a class="sub-menu-link" th:href="@{/servicios}" href="ListadoS.html">
+                            Listado de servicios
+                        </a>
+                    </li>
+                    <li>
+                        <a class="sub-menu-link" th:href="@{/servicios/crear}" href="crearS.html">
+                            Crear servicios
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-calendar'></i>
+                    <span>Citas</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a class="sub-menu-link" th:href="@{/citas}" href="listadoC.html">
+                            Listado de citas
+                        </a>
+                    </li>
+                    <li>
+                        <a class="sub-menu-link" th:href="@{/citas/crear}" href="FormularioCita.html">
+                            Crear citas
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-package'></i>
+                    <span>Insumos</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a class="sub-menu-link" th:href="@{/insumos}" href="listadoI.html">
+                            Listado de insumos
+                        </a>
+                    </li>
+                    <li>
+                        <a class="sub-menu-link" th:href="@{/insumos/crear}" href="FormularioInsumo.html">
+                            Crear insumos
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="menu-item menu-item-dropdown active">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-receipt'></i>
+                    <span>Facturas</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a class="sub-menu-link" th:href="@{/facturas}" href="listadoF.html">
+                            Listado de facturas
+                        </a>
+                    </li>
+                    <li>
+                        <a class="sub-menu-link active" th:href="@{/facturas/crear}" href="FormularioFactura.html">
+                            Crear factura
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="footer">
+        <ul class="menu">
+            <li class="menu-item menu-item-static">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-bell'></i>
+                    <span>Notificaciones</span>
+                </a>
+            </li>
+
+            <li class="menu-item menu-item-static">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-cog'></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="user">
+            <div class="user-img">
+                <img th:src="@{/bostraap/icons/Starter pfp.jpg}" src="/bostraap/icons/Starter pfp.jpg" alt="user">
+            </div>
+
+            <div class="user-info">
+                <span class="nombre">Brayan</span>
+                <span class="email">brayan@example.com</span>
+            </div>
+
+            <div class="user-icon">
+                <a th:href="@{/login}" href="login.html">
+                    <i class='bx bx-exit'></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main>
+
+    <div class="dashboard-grid-crear">
+
+        <!-- Formulario Facturas -->
+        <div class="caja formulario-wrapper">
+
+            <div class="formulario-container">
+
+                <h2>Crear Factura</h2>
+
+                <form class="form-cita" id="facturaForm">
+
+                    <div class="campo">
+                        <label for="buscarCita">Cita</label>
+                        <input type="text" id="buscarCita" list="listaCitas"
+                               placeholder="Escribe el número de la cita..." required autocomplete="off">
+
+                        <datalist id="listaCitas"></datalist>
+
+                        <input type="hidden" id="idCitaFK" name="idCitaFK">
+                    </div>
+
+                    <div class="campo">
+                        <label for="fechaEmision">Fecha de emisión</label>
+                        <input type="datetime-local" id="fechaEmision" name="fechaEmision" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="total">Total</label>
+                        <input type="number" id="total" name="total"
+                               step="0.01" min="0" placeholder="Ej: 54000" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="iva">IVA</label>
+                        <input type="number" id="iva" name="iva"
+                               step="0.01" min="0" placeholder="Ej: 10260" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="estadoFactura">Estado</label>
+                        <select id="estadoFactura" name="estadoFactura" required>
+                            <option value="Pendiente" selected>Pendiente</option>
+                            <option value="Pagada">Pagada</option>
+                            <option value="Anulada">Anulada</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="metodoPago">Método de pago</label>
+                        <select id="metodoPago" name="metodoPago" required>
+                            <option value="">-- Seleccione un método --</option>
+                            <option value="Efectivo">Efectivo</option>
+                            <option value="Tarjeta">Tarjeta</option>
+                            <option value="Transferencia">Transferencia</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="observaciones">Observaciones</label>
+                        <input type="text" id="observaciones" name="observaciones"
+                               maxlength="50" placeholder="Observaciones (opcional)">
+                    </div>
+
+                    <div class="botones">
+                        <button type="submit" class="btn-guardar">Generar Factura</button>
+                        <button type="reset" id="btnLimpiarFactura" class="btn-limpiar">Limpiar</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <!-- Paneles de Apoyo -->
+        <div class="paneles-derecha">
+
+            <!-- Modo de uso -->
+            <div class="instrucciones-wrapper">
+
+                <button type="button" id="btnInstrucciones" class="btn-instrucciones">
+                    <span>
+                        <i class='bx bx-help-circle'></i>
+                        Modo De Uso
+                    </span>
+                    <i class='bx bx-chevron-down' id="iconoFlecha"></i>
+                </button>
+
+                <div class="instrucciones-contenido" id="contenidoInstrucciones">
+                    <ul>
+                        <li>Seleccione la cita asociada a la factura.</li>
+                        <li>Verifique la fecha de emisión.</li>
+                        <li>Ingrese el total y el IVA.</li>
+                        <li>Seleccione el estado y método de pago.</li>
+                        <li>Agregue observaciones si es necesario.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Vista Previa -->
+            <div class="caja-panel preview-panel">
+
+                <h3>
+                    <i class='bx bx-receipt'></i>
+                    Vista Previa de la Factura
+                </h3>
+
+                <div class="preview-card-body">
+
+                    <div class="avatar-preview">
+                        <i class='bx bx-receipt'></i>
+                    </div>
+
+                    <div class="preview-info">
+                        <h4 id="prevCitaF">Cita No Seleccionada</h4>
+                        <p id="prevFechaF">Fecha: --/--/----</p>
+                        <p id="prevTotalF">Total: $0.00</p>
+                        <span id="prevEstadoF" class="badge-rol">Pendiente</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Facturas Recientes -->
+            <div class="caja-panel recientes-panel">
+
+                <h3>
+                    <i class='bx bx-receipt'></i>
+                    Facturas Recientes
+                </h3>
+
+                <ul id="listaUltimasFacturas" class="lista-recientes">
+                    <li class="sin-registros">Cargando facturas...</li>
+                </ul>
+
+                <a th:href="@{/facturas}" href="listadoF.html" class="btn-ver-todos">
+                    Ver Todas las Facturas
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<script th:src="@{/javascript/FacturaC.js}" src="/javascript/FacturaC.js"></script>
+<script th:src="@{/javascript/Permisos.js}"></script>
+
+</body>
+</html>
+```

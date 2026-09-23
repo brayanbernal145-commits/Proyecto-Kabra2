@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Registro</title>
+    <link rel="stylesheet" th:href="@{/css/formulario.css}" href="/css/formulario.css">
+</head>
+
+<body>
+<div class="caja2">
+    <form id="userForm" th:action="@{/usuarios/guardar}" method="POST" onsubmit="crearUsuario(event)">
+        <h2>Crear Cuenta</h2>
+        <p>Regístrate para continuar</p>
+
+        <select id="TipoDocumento" name="tipoDocumento" required>
+            <option value="">Tipo de Documento</option>
+            <option value="C.C">Cédula</option>
+            <option value="C.E">Cédula Extranjería</option>
+        </select>
+
+        <input type="number" id="numDocumento" name="numDocumento" required placeholder="Número de Documento">
+        <input type="text" id="nombreCompleto" name="nombreCompleto" required placeholder="Nombre Completo">
+        <input type="number" id="telefono" name="telefono" required placeholder="Teléfono">
+        <input type="email" id="email" name="email" required placeholder="Email">
+        <input type="text" id="direccion" name="direccion" required placeholder="Dirección">
+
+        <input type="password" id="contrasenia" name="contrasenia" required placeholder="Contraseña">
+
+        <input type="hidden" id="estado" name="estado" value="Activo">
+        <input type="hidden" id="cargo" name="cargo" value="Cliente">
+        <input type="hidden" id="idRolFK" name="idRolFK" value="3">
+
+        <select id="genero" name="genero" required>
+            <option value="">Género</option>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+            <option value="otro">Otro</option>
+        </select>
+
+        <button type="submit">Registrarse</button>
+    </form>
+
+    <a th:href="@{/login}" href="Login.html">
+        ¿Ya tienes cuenta? Inicia sesión
+    </a>
+
+    <script th:src="@{/javascript/Usuarios.js}" src="javascript/Usuarios.js"></script>
+    <script th:src="@{/javascript/Permisos.js}"></script>
+</div>
+</body>
+</html>

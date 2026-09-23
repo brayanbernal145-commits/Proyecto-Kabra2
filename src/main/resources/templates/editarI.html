@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Insumo - D'juan Carlos Peluqueria</title>
+    <link rel="stylesheet" th:href="@{/css/CrearI.css}" href="/css/CrearI.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="menu-btn sidebar-btn" id="sidebar-btn">
+    <i class="bx bx-menu"></i>
+    <i class="bx bx-x"></i>
+</div>
+<div class="sidebar" id="sidebar">
+    <div class="header">
+        <div class="menu-btn" id="menu-btn">
+            <i class='bx bx-chevron-left'></i>
+        </div>
+    </div>
+    <div class="brand">
+        <img src="../../../../../resources/Static/javascript/bostraap/icons/logo.jpeg" alt="logo">
+        <span>D'juan Carlos Peluqueria</span>
+    </div>
+    <div class="menu_c">
+         <ul class="menu">
+            <li class="menu-item menu-item-static">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-home'></i>
+                    <span>Perfil</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-shopping-bag'></i>
+                    <span>Usuarios</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li> <a class="sub-menu-link" href="#">Listado de usuarios</a></li>
+                    <li> <a class="sub-menu-link" href="#">Crear un usuario</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-shopping-bag'></i>
+                    <span>Servicios</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li> <a class="sub-menu-link" href="#">Listado de servicios</a></li>
+                    <li> <a class="sub-menu-link" href="#">Crear servicios</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-file-blank'></i>
+                    <span>Citas</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li> <a class="sub-menu-link" href="listadoC.html">Listado de citas</a></li>
+                    <li> <a class="sub-menu-link" href="FormularioCita.html">Crear citas</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-dropdown active">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-file-blank'></i>
+                    <span>Insumos</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li> <a class="sub-menu-link" href="listadoI.html">Listado de insumos</a></li>
+                    <li> <a class="sub-menu-link" href="FormularioInsumo.html">Crear insumos</a></li>
+                    <li> <a class="sub-menu-link active" href="#">Actualizar insumos</a></li>
+                </ul>
+            </li>
+             <li class="menu-item menu-item-dropdown">
+                 <a href="#" class="menu-link">
+                     <i class='bx bx-receipt'></i>
+                     <span>Facturas</span>
+                     <i class='bx bx-chevron-down'></i>
+                 </a>
+
+                 <ul class="sub-menu">
+                     <li>
+                         <a class="sub-menu-link"
+                            th:href="@{/facturas}"
+                            href="ListadoF.html">
+                             Listado de facturas
+                         </a>
+                     </li>
+
+                     <li>
+                         <a class="sub-menu-link"
+                            th:href="@{/facturas/crear}"
+                            href="FormularioFactura.html">
+                             Crear factura
+                         </a>
+                     </li>
+                 </ul>
+             </li>
+        </ul>
+    </div>
+    <div class="footer">
+        <ul class="menu">
+            <li class="menu-item menu-item-static">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-bell'></i>
+                    <span>Notificaciones</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-static">
+                <a href="#" class="menu-link">
+                    <i class='bx bx-cog'></i>
+                    <span>settings</span>
+                </a>
+            </li>
+        </ul>
+        <div class="user">
+            <div class="user-img">
+                <img src="../../../../../resources/Static/javascript/bostraap/icons/starter pfp.jpg" alt="user">
+            </div>
+            <div class="user-data">
+                <span class="name">Brayan</span>
+                <span class="email">Brayan@gmail.com</span>
+            </div>
+            <div class="user-icon">
+                <a href="#">
+                    <i class='bx bx-exit'></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<main>
+    <div class="dashboard-grid">
+        <div class="caja">
+            <form id="insumoForm">
+                <h2>Editar Insumo</h2>
+                <p class="tip">Completa los datos del insumo para Actualizarlo correctamente.</p>
+
+                <input type="text" id="nombreInsumo" name="nombreInsumo" required placeholder="Nombre del insumo">
+
+                <textarea class="descripcion" id="descripcionInsumo" name="descripcionInsumo" required placeholder="Descripción del insumo" rows="3"></textarea>
+
+                <select id="categoriaInsumo" name="categoriaInsumo" required>
+                    <option value="">Categoría</option>
+                    <option value="Tintes">Tintes</option>
+                    <option value="shampoo y tratamientos">shampoo y tratamientos</option>
+                    <option value="Pelo">Pelo</option>
+                    <option value="Herramienta">Herramienta</option>
+                    <option value="Estetica">Estetica</option>
+                    <option value="Pestañas">Pestañas</option>
+                    <option value="Uñas">Uñas</option>
+                    <option value="Cosmético">Cosmético</option>
+                    <option value="Accesorio">Accesorio</option>
+                </select>
+
+                <input type="number" id="stockActual" name="stockActual" required min="1" max="70" placeholder="Cantidad">
+
+                <div class="field-group">
+                    <small class="field-hint">Fecha de Vencimiento</small>
+                    <input type="date" id="fechaVencimiento" name="fechaVencimiento" required>
+                </div>
+                <div class="field-group">
+                    <small class="field-hint">Hora de Actualización</small>
+                    <input type="time" id="horaActualizacion" name="horaActualizacion" required>
+                </div>
+
+                <button type="submit">Actualizar datos del insumo</button>
+            </form>
+        </div>
+        <div class="instrucciones">
+            <h2>Instrucciones para Actualizar un insumo</h2>
+            <p class="tip">Usa estos datos como guía para que el registro sea claro y ordenado.</p>
+            <ul class="instruction-list">
+                <li>Escribe el nombre del insumo completo y sin abreviaturas.</li>
+                <li>En la descripción indica su uso, presentación o detalle importante.</li>
+                <li>Selecciona la categoría correcta para organizar mejor el inventario.</li>
+                <li>La fecha de vencimiento debe ser la real del producto.</li>
+                <li>La cantidad debe ser un número entero que no sobrepase la cantidad de 70 por ingreso y la hora de ingreso puede usarse en formato 24 horas.</li>
+            </ul>
+            <p class="tip">Consejo: revisa que los datos coincidan con el producto físico antes de guardar si desea editarlo diríjase al apartado de lista de insumos para actualizarlo o eliminarlo.</p>
+        </div>
+    </div>x
+</main>
+<script th:src="@{/javascript/insumoA.js}"
+        src="/javascript/insumoA.js"></script>
+
+
+</body>
+</html>
